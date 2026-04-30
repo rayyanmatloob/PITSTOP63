@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pitstop63 | Premium Cafe</title>
+  <meta
+    name="description"
+    content="Pitstop63 premium cafe menu website."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="brand-header" id="top">
+      <div class="header-grain" aria-hidden="true"></div>
+      <div class="header-shell">
+        <div class="header-center">
+          <div class="logo-stage" aria-label="Pitstop63 glowing logo">
+            <div class="logo-glow" aria-hidden="true"></div>
+            <div class="logo-orbit orbit-outer" aria-hidden="true"></div>
+            <div class="logo-orbit orbit-inner" aria-hidden="true"></div>
+
+            <div class="logo-core">
+              <img
+                src="LOGO.jpg"
+                alt="Pitstop63 logo"
+                class="hero-logo"
+              >
+            </div>
+          </div>
+
+          <section class="order-mode-panel" aria-labelledby="order-mode-title">
+            <div class="order-mode-heading">
+              <span>Choose Your Pit Stop</span>
+              <h1 id="order-mode-title">Pickup or delivery?</h1>
+            </div>
+
+            <div class="order-mode-grid" role="group" aria-label="Select pickup or delivery">
+              <button class="order-mode-card" type="button" data-order-mode="pickup">
+                <span class="order-mode-kicker">Counter Pickup</span>
+                <strong>Pickup</strong>
+                <small>DHA Phase 6, Lahore outlet</small>
+              </button>
+
+              <button class="order-mode-card" type="button" data-order-mode="delivery">
+                <span class="order-mode-kicker">Home Delivery</span>
+                <strong>Delivery</strong>
+                <small>Add your delivery details at checkout</small>
+              </button>
+            </div>
+
+            <div class="order-mode-details" id="orderModeDetails" aria-live="polite">
+              <p>Select how you want your Pitstop63 order served.</p>
+            </div>
+          </section>
+
+          <div class="engine-launch">
+            <p class="engine-hint" id="engineHint">Choose pickup or delivery first, then ignite the menu.</p>
+            <button
+              class="engine-button"
+              id="engineToggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="menu"
+              aria-label="Engine start button"
+              disabled
+            >
+              <span class="engine-button-core">
+                <span class="engine-small">Engine</span>
+                <span class="engine-main">Start</span>
+                <span class="engine-small">Stop</span>
+              </span>
+              <span class="engine-indicator" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="menu-section" id="menu" aria-labelledby="menu-title" aria-hidden="true">
+        <div class="menu-inner">
+          <div class="menu-shell">
+            <section class="pitstop-section" id="our-pitstop" aria-labelledby="pitstop-title">
+              <div class="pitstop-heading">
+                <h2 class="footer-wordmark pitstop-wordmark" id="pitstop-title" aria-label="Pitstop63">
+                  <span class="footer-wordmark-text">Pitstop</span>
+                  <span class="footer-wordmark-number">63</span>
+                  <span class="footer-stripes" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </h2>
+              </div>
+
+              <div class="pitstop-grid">
+                <article class="pitstop-video-card">
+                  <video
+                    class="pitstop-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster="d2_files/671234534_17867788209667091_6196102666549926421_n.jpg"
+                  >
+                    <source src="our-pitstop-assets/pitstop-motion.mp4" type="video/mp4">
+                  </video>
+                </article>
+                <article class="pitstop-card pitstop-card-main" aria-label="Pitstop63 iced drinks"></article>
+                <article class="pitstop-copy-card">
+                  <p>
+                    Pitstop63 is a coffee spot built for quick refuels, good conversations,
+                    and drinks that feel made for the moment. Stop by for bold coffee,
+                    cold blends, and a calm break from the road.
+                  </p>
+
+                  <div class="pitstop-info-list" aria-label="Pitstop63 location and hours">
+                    <div class="pitstop-info-item">
+                      <span>Location</span>
+                      <strong>182 CCA, 1 C Block Sector C, DHA Phase 6, Lahore</strong>
+                    </div>
+
+                    <div class="pitstop-info-item">
+                      <span>Hours</span>
+                      <strong>Monday to Sunday, 8:00 AM - 3:00 AM</strong>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <div class="menu-simple-heading">
+              <h2 id="menu-title">Menu</h2>
+            </div>
+
+            <div class="menu-search-shell">
+              <label class="menu-search-label" for="menuSearch">Search the Menu</label>
+
+              <div class="menu-search-bar">
+                <span class="menu-search-icon" aria-hidden="true"></span>
+                <input
+                  class="menu-search-input"
+                  id="menuSearch"
+                  type="search"
+                  placeholder="Search latte, frappe, brownie..."
+                  autocomplete="off"
+                  spellcheck="false"
+                  enterkeyhint="search"
+                >
+                <button class="menu-search-clear" id="menuSearchClear" type="button" hidden>Clear</button>
+              </div>
+
+              <p class="menu-search-status" id="menuSearchStatus" aria-live="polite">
+                Search any drink, dessert, or category.
+              </p>
+            </div>
+
+            <div class="menu-action-row">
+              <div class="menu-selection-status" id="menuSelectionStatus" aria-live="polite">
+                Tap + next to any item to add it.
+              </div>
+
+              <button class="cart-toggle" id="cartToggle" type="button" aria-expanded="false" aria-controls="cartSummary" hidden>
+                <span class="cart-toggle-icon" aria-hidden="true"></span>
+                <span>View Cart</span>
+                <strong id="cartToggleTotal">PKR 0</strong>
+              </button>
+            </div>
+
+            <div class="menu-board-grid">
+              <article class="menu-board menu-board-brew">
+                <section class="menu-category">
+                  <div class="menu-category-head menu-category-head-dual">
+                    <h4>Coffee</h4>
+                    <div class="menu-price-meta" aria-label="Coffee sizes">
+                      <span>Hot <small>(8oz)</small></span>
+                      <span>Iced <small>(14oz)</small></span>
+                    </div>
+                  </div>
+
+                  <ul class="menu-list menu-list-dual">
+                    <li><span>Vanilla</span><span>663</span><span>763</span></li>
+                    <li><span>Hazelnut</span><span>663</span><span>763</span></li>
+                    <li><span>Caramel</span><span>663</span><span>863</span></li>
+                    <li><span>Spanish Latte</span><span>763</span><span>863</span></li>
+                    <li><span>Spanish Cinnamon</span><span>763</span><span>963</span></li>
+                    <li><span>Kinder Latte</span><span>963</span><span>1063</span></li>
+                    <li><span>Lotus Latte</span><span>963</span><span>1063</span></li>
+                    <li><span>Salted Caramel Latte</span><span>663</span><span>963</span></li>
+                    <li><span>Tiramisu</span><span>663</span><span>963</span></li>
+                    <li><span>Mocha</span><span>863</span><span>963</span></li>
+                    <li><span>Pistachio Latte</span><span>963</span><span>1063</span></li>
+                    <li><span>Spanish Cortado</span><span>663</span><span>-</span></li>
+                    <li><span>Cortado</span><span>563</span><span>-</span></li>
+                    <li><span>Flatwhite</span><span>563</span><span>-</span></li>
+                    <li><span>Cappuccino</span><span>663</span><span>-</span></li>
+                    <li><span>Latte</span><span>663</span><span>763</span></li>
+                    <li><span>Americano</span><span>563</span><span>663</span></li>
+                    <li><span>Honey Americano</span><span>663</span><span>763</span></li>
+                    <li><span>Orange Americano</span><span>663</span><span>763</span></li>
+                  </ul>
+                </section>
+
+                <div class="menu-subgrid menu-subgrid-brew">
+                  <section class="menu-category menu-category-mini">
+                    <div class="menu-category-head">
+                      <h4>Chocolate</h4>
+                      <span class="menu-price-label">PKR</span>
+                    </div>
+
+                    <ul class="menu-list">
+                      <li><span>Belgium Hot Chocolate</span><span>863</span></li>
+                      <li><span>Signature Iced Chocolate</span><span>863</span></li>
+                      <li><span>Signature Coconut Hot Chocolate</span><span>963</span></li>
+                      <li><span>Signature Hazelnut Hot Chocolate</span><span>963</span></li>
+                      <li><span>Bounty Hot Chocolate</span><span>963</span></li>
+                    </ul>
+                  </section>
+
+                  <section class="menu-category menu-category-mini">
+                    <div class="menu-category-head">
+                      <h4>Iced Tea</h4>
+                      <span class="menu-price-label">PKR</span>
+                    </div>
+
+                    <ul class="menu-list">
+                      <li><span>Peach</span><span>763</span></li>
+                      <li><span>Pineapple</span><span>763</span></li>
+                      <li><span>Passionfruit</span><span>663</span></li>
+                      <li><span>Plain</span><span>563</span></li>
+                    </ul>
+                  </section>
+
+                  <section class="menu-category menu-category-mini">
+                    <div class="menu-category-head">
+                      <h4>V60</h4>
+                      <span class="menu-price-label">PKR</span>
+                    </div>
+
+                    <ul class="menu-list">
+                      <li><span>Iced / Hot</span><span>963</span></li>
+                    </ul>
+                  </section>
+                </div>
+              </article>
+
+              <article class="menu-board menu-board-cold">
+                <section class="menu-category">
+                  <div class="menu-category-head">
+                    <h4>Frappes</h4>
+                    <span class="menu-price-label">PKR</span>
+                  </div>
+
+                  <ul class="menu-list">
+                    <li><span>Vanilla</span><span>963</span></li>
+                    <li><span>Hazelnut</span><span>963</span></li>
+                    <li><span>Caramel</span><span>963</span></li>
+                    <li><span>Mocha</span><span>1063</span></li>
+                    <li><span>Lotus</span><span>1063</span></li>
+                    <li><span>Ferrero</span><span>1263</span></li>
+                    <li><span>Bounty</span><span>1063</span></li>
+                    <li><span>Kinder</span><span>1263</span></li>
+                    <li><span>Pistachio</span><span>1263</span></li>
+                    <li><span>Aftereight</span><span>1063</span></li>
+                  </ul>
+                </section>
+
+                <section class="menu-category">
+                  <div class="menu-category-head">
+                    <h4>Chillers</h4>
+                    <span class="menu-price-label">PKR</span>
+                  </div>
+
+                  <ul class="menu-list">
+                    <li><span>Pine Boost</span><span>763</span></li>
+                    <li><span>Berry Passion Drive</span><span>763</span></li>
+                    <li><span>Kiwi Kick</span><span>763</span></li>
+                    <li><span>Blueberry Surge</span><span>763</span></li>
+                    <li><span>Strawberry Passion Fruit</span><span>763</span></li>
+                    <li><span>Strawberry</span><span>763</span></li>
+                  </ul>
+                </section>
+
+                <section class="menu-category">
+                  <div class="menu-category-head">
+                    <h4>Matcha</h4>
+                    <span class="menu-price-label">PKR</span>
+                  </div>
+
+                  <ul class="menu-list">
+                    <li><span>Plain Matcha</span><span>663</span></li>
+                    <li><span>Cold Foam Matcha</span><span>663</span></li>
+                    <li><span>Strawberry Matcha</span><span>963</span></li>
+                    <li><span>Vanilla Matcha</span><span>863</span></li>
+                    <li><span>Coconut Matcha</span><span>963</span></li>
+                    <li><span>Blueberry Matcha</span><span>863</span></li>
+                  </ul>
+                </section>
+
+                <section class="menu-category">
+                  <div class="menu-category-head">
+                    <h4>Smoothies</h4>
+                    <span class="menu-price-label">PKR</span>
+                  </div>
+
+                  <ul class="menu-list">
+                    <li><span>Strawberry</span><span>963</span></li>
+                    <li><span>Blueberry</span><span>963</span></li>
+                  </ul>
+                </section>
+              </article>
+
+              <article class="menu-board menu-board-kitchen">
+                <section class="menu-category">
+                  <div class="menu-category-head">
+                    <h4>Desserts</h4>
+                    <span class="menu-price-label">PKR</span>
+                  </div>
+
+                  <ul class="menu-list">
+                    <li><span>Bread Pudding</span><span>763</span></li>
+                    <li><span>Brownie</span><span>463</span></li>
+                    <li><span>Matilda Cake</span><span>763</span></li>
+                    <li><span>Lisbon Cake</span><span>863</span></li>
+                    <li><span>Banana Bread</span><span>563</span></li>
+                    <li><span>Chocolate Tart</span><span>563</span></li>
+                    <li><span>Eclairs</span><span>463</span></li>
+                    <li><span>New York Cheese Cake</span><span>963</span></li>
+                    <li><span>Lotus Cheese Cake</span><span>963</span></li>
+                    <li><span>Carrot Cake</span><span>663</span></li>
+                    <li><span>Caramel Blondie</span><span>563</span></li>
+                    <li><span>Plain Croissant</span><span>763</span></li>
+                    <li><span>Almond Croissant</span><span>963</span></li>
+                    <li><span>Pistachio Croissant</span><span>963</span></li>
+                  </ul>
+                </section>
+
+                <section class="menu-category">
+                  <div class="menu-category-head">
+                    <h4>Savouries</h4>
+                    <span class="menu-price-label">PKR</span>
+                  </div>
+
+                  <ul class="menu-list">
+                    <li><span>Tuscan Chicken Sandwich</span><span>1163</span></li>
+                    <li><span>Pesto Chicken Sandwich</span><span>1163</span></li>
+                    <li><span>Brioche Sandwich</span><span>763</span></li>
+                    <li><span>Beef Smash Burger</span><span>1063</span></li>
+                    <li><span>Jalapeno Chicken Sandwich</span><span>1163</span></li>
+                    <li><span>Korean Chicken Sandwich</span><span>963</span></li>
+                    <li><span>Red Penne Pasta</span><span>963</span></li>
+                    <li><span>Lasagna</span><span>963</span></li>
+                  </ul>
+                </section>
+
+                <div class="menu-subgrid menu-subgrid-kitchen">
+                  <section class="menu-category menu-category-mini">
+                    <div class="menu-category-head">
+                      <h4>Add Ons</h4>
+                      <span class="menu-price-label">PKR</span>
+                    </div>
+
+                    <ul class="menu-list">
+                      <li><span>Oat Milk</span><span>363</span></li>
+                      <li><span>Lactose Free</span><span>63</span></li>
+                      <li><span>Extra Shot</span><span>263</span></li>
+                      <li><span>Water</span><span>163</span></li>
+                      <li><span>Ice Cream Scoop</span><span>63</span></li>
+                    </ul>
+                  </section>
+
+                  <section class="menu-category menu-category-mini">
+                    <div class="menu-category-head">
+                      <h4>Chocolate Bites</h4>
+                      <span class="menu-price-label">PKR</span>
+                    </div>
+
+                    <ul class="menu-list">
+                      <li><span>Roasted Hazelnut</span><span>763</span></li>
+                      <li><span>Double Chocolate Peanut Butter</span><span>563</span></li>
+                      <li><span>Pecan Hug Milk Chocolate</span><span>563</span></li>
+                    </ul>
+                  </section>
+                </div>
+              </article>
+            </div>
+
+            <section class="about-reviews-section" aria-labelledby="about-title">
+              <article class="about-card">
+                <div class="section-title-mark">
+                  <span class="heading-stripes" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <h2 id="about-title">About Us</h2>
+                </div>
+                <p>
+                  Pitstop63 brings a garage-inspired cafe mood into a clean specialty coffee space, made for quick orders,
+                  late conversations, and the kind of stop that feels worth staying for.
+                </p>
+              </article>
+
+              <article class="reviews-card" aria-labelledby="reviews-title">
+                <div class="section-title-mark section-title-mark-right">
+                  <span class="heading-stripes" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                  <h2 id="reviews-title">Reviews</h2>
+                </div>
+
+                <div class="reviews-carousel" aria-label="Customer reviews carousel">
+                  <div class="review-track" id="reviewTrack" tabindex="0">
+                    <blockquote class="review-slide">
+                      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                      <p>The best coffee and ambiance in all of Lahore, and the coolest concept. The pistachio and tiramisu latte are incredible. Pretty much everything on the menu is great.</p>
+                      <cite>Hafsa</cite>
+                    </blockquote>
+
+                    <blockquote class="review-slide">
+                      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                      <p>Tried their Belgium hot chocolate and it is so good, definitely 10/10. Ambiance and vibes are 1000/10, and the cherry on top is their friendly service.</p>
+                      <cite>Maham Maham</cite>
+                    </blockquote>
+
+                    <blockquote class="review-slide">
+                      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                      <p>Really pleasant ambiance, specially made for bikes and car lovers. Loved their Pistachio Latte as well. Service quality was top notch. Recommended for a snack and coffee.</p>
+                      <cite>Rana Hannan Ghaffar</cite>
+                    </blockquote>
+
+                    <blockquote class="review-slide">
+                      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                      <p>A must try, better than most of the major coffee shops. Also a good place to visit if you're a car guy or girl.</p>
+                      <cite>RK</cite>
+                    </blockquote>
+
+                    <blockquote class="review-slide">
+                      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                      <p>Amazing ambiance for car lovers. We tried the vanilla, pistachio, and Ferrero frappes, and all were good. The smoked chicken sandwich and cheesecake were good too. Overall, a great experience.</p>
+                      <cite>Usman Ghouri</cite>
+                    </blockquote>
+
+                    <blockquote class="review-slide">
+                      <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                      <p>A whole new experience for automotive enthusiasts who want to see automotive communities gather in Lahore.</p>
+                      <cite>Dee Bee</cite>
+                    </blockquote>
+                  </div>
+
+                  <div class="review-dots" aria-hidden="true">
+                    <span class="is-active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <footer class="site-footer" aria-label="Pitstop63 footer">
+              <div class="footer-brand">
+                <img src="LOGO.jpg" alt="Pitstop63 logo" class="footer-logo">
+
+                <div class="footer-wordmark" aria-label="Pitstop63 cafe">
+                  <span class="footer-wordmark-text">Pitstop</span>
+                  <span class="footer-wordmark-number">63</span>
+                  <span class="footer-stripes" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="footer-actions">
+                <a href="#top">Start Again</a>
+                <a href="#our-pitstop">Our Pitstop</a>
+                <a href="#menu">Menu</a>
+                <a
+                  class="footer-instagram"
+                  href="https://www.instagram.com/pitstopcoffeee/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Pitstop63 on Instagram"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                  </svg>
+                </a>
+              </div>
+            </footer>
+
+            <div class="developer-credit" aria-label="Developer credit">
+              <strong>Powered by CoreCraft Digital</strong>
+              <a
+                class="developer-instagram"
+                href="https://www.instagram.com/corecraftdigital18/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open CoreCraft Digital on Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <aside class="cart-summary" id="cartSummary" aria-labelledby="cartSummaryTitle" hidden>
+    <button class="cart-close" id="cartClose" type="button" aria-label="Close cart"></button>
+
+    <div class="cart-summary-head">
+      <div>
+        <span>Checkout</span>
+        <h3 id="cartSummaryTitle">Review Your Order</h3>
+      </div>
+      <strong id="cartSummaryCount">0 items</strong>
+    </div>
+
+    <p class="cart-empty" id="cartEmpty">Your cart is empty. Add something from the menu.</p>
+    <ul class="cart-items" id="cartItems"></ul>
+
+    <div class="cart-summary-total">
+      <span>Total</span>
+      <strong id="cartSummaryTotal">PKR 0</strong>
+    </div>
+
+    <form class="order-form" id="orderForm">
+      <label>
+        <span>Name</span>
+        <input id="orderCustomerName" type="text" placeholder="Customer name" autocomplete="name" required>
+      </label>
+
+      <label>
+        <span>Phone Number</span>
+        <input id="orderCustomerPhone" type="tel" placeholder="03XX XXXXXXX" autocomplete="tel" required>
+      </label>
+
+      <label class="delivery-only-field">
+        <span>Complete Address</span>
+        <textarea id="orderAddress" rows="3" placeholder="House, street, block, phase, city"></textarea>
+      </label>
+
+      <label class="delivery-only-field">
+        <span>Nearest Landmark</span>
+        <input id="orderLandmark" type="text" placeholder="Near mosque, school, mall, etc.">
+      </label>
+
+      <div class="pickup-branch-card" id="pickupBranchCard">
+        <span>Pickup Branch</span>
+        <strong>182 CCA, 1 C Block Sector C, DHA Phase 6, Lahore</strong>
+      </div>
+
+      <label>
+        <span>Order Notes</span>
+        <textarea id="orderNotes" rows="3" placeholder="Any special request?"></textarea>
+      </label>
+
+      <button class="place-order-button" type="submit">Place Order</button>
+    </form>
+
+    <div class="order-confirmation" id="orderConfirmation" hidden></div>
+  </aside>
+
+  <button class="floating-cart-button" id="floatingCartButton" type="button" aria-controls="cartSummary" hidden>
+    <span>View Cart</span>
+    <strong id="floatingCartTotal">PKR 0</strong>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

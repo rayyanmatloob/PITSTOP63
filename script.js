@@ -45,6 +45,7 @@ let activeVariantItem = null;
 let activeAddOn = null;
 let pendingOrder = null;
 let orderCountdownTimer = null;
+let reviewScrollFrame = null;
 const itemQuantities = new Map();
 const cartEntries = new Map();
 const cartEntryOrder = [];
@@ -1152,21 +1153,29 @@ function stopReviewCarousel() {
 
 if (reviewTrack && reviewSlides.length > 0) {
   reviewTrack.addEventListener("scroll", () => {
-    const nextIndex = reviewSlides.reduce((closestIndex, slide, slideIndex) => {
-      const closestSlide = reviewSlides[closestIndex];
-      const currentDistance = Math.abs(slide.offsetLeft - reviewTrack.offsetLeft - reviewTrack.scrollLeft);
-      const closestDistance = Math.abs(closestSlide.offsetLeft - reviewTrack.offsetLeft - reviewTrack.scrollLeft);
-
-      return currentDistance < closestDistance ? slideIndex : closestIndex;
-    }, 0);
-
-    if (nextIndex !== reviewIndex) {
-      reviewIndex = nextIndex;
-      reviewDots.forEach((dot, dotIndex) => {
-        dot.classList.toggle("is-active", dotIndex === reviewIndex);
-      });
+    if (reviewScrollFrame) {
+      return;
     }
-  });
+
+    reviewScrollFrame = window.requestAnimationFrame(() => {
+      reviewScrollFrame = null;
+
+      const nextIndex = reviewSlides.reduce((closestIndex, slide, slideIndex) => {
+        const closestSlide = reviewSlides[closestIndex];
+        const currentDistance = Math.abs(slide.offsetLeft - reviewTrack.offsetLeft - reviewTrack.scrollLeft);
+        const closestDistance = Math.abs(closestSlide.offsetLeft - reviewTrack.offsetLeft - reviewTrack.scrollLeft);
+
+        return currentDistance < closestDistance ? slideIndex : closestIndex;
+      }, 0);
+
+      if (nextIndex !== reviewIndex) {
+        reviewIndex = nextIndex;
+        reviewDots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("is-active", dotIndex === reviewIndex);
+        });
+      }
+    });
+  }, { passive: true });
 
   setActiveReview(0);
 }
@@ -1190,7 +1199,7 @@ if (engineToggle && menuSection) {
     if (isVisible) {
       window.setTimeout(() => {
         menuSection.scrollIntoView({
-          behavior: "smooth",
+          behavior: "auto",
           block: "start"
         });
 

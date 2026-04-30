@@ -125,7 +125,7 @@ a,
   background:
     radial-gradient(circle at 50% 32%, rgba(215, 221, 223, 0.12), transparent 18rem),
     radial-gradient(circle at 50% 50%, rgba(90, 52, 45, 0.2), transparent 23rem);
-  filter: blur(16px);
+  filter: blur(8px);
   opacity: 0.85;
   z-index: -1;
 }
@@ -248,7 +248,7 @@ a,
   border-radius: 50%;
   background:
     radial-gradient(circle, rgba(247, 242, 236, 0.24) 0%, rgba(183, 171, 159, 0.2) 24%, rgba(90, 52, 45, 0.18) 52%, transparent 72%);
-  filter: blur(24px);
+  filter: blur(12px);
   animation: haloPulse 5.5s ease-in-out infinite;
 }
 
@@ -353,7 +353,7 @@ h1 {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     0 22px 52px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
 }
 
 .order-mode-heading {
@@ -916,6 +916,23 @@ h1 {
   color: rgba(247, 242, 236, 0.82);
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
+}
+
+.engine-button,
+.cart-toggle,
+.menu-board,
+.pitstop-video-card,
+.pitstop-card,
+.about-card,
+.reviews-card,
+.cart-summary,
+.variant-picker-panel {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.pitstop-video {
+  will-change: auto;
 }
 
 .cart-toggle:hover,
@@ -2776,7 +2793,7 @@ body.cart-screen-open {
   border-radius: 1.15rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(19, 16, 14, 0.76);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
 }
 
 .compact-note {
@@ -3280,6 +3297,21 @@ body.cart-screen-open {
 }
 
 @media (max-width: 900px) {
+  .header-grain,
+  .logo-glow {
+    filter: none;
+  }
+
+  .logo-glow {
+    animation: none;
+    opacity: 0.72;
+  }
+
+  .order-mode-panel,
+  .image-note {
+    backdrop-filter: none;
+  }
+
   .brand-header {
     min-height: auto;
   }
